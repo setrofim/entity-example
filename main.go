@@ -57,6 +57,8 @@ func main() {
 	fmt.Printf("also entity email: %s\n", exts.Email)
 
 	out, err := encoding.SerializeStructToJSON(entity)
+	// this also works (note that a pointer is passed)
+	//out, err := json.Marshal(&entity)
 	if err != nil {
 		log.Fatalf("could not marshal entity: %s", err.Error())
 	}
