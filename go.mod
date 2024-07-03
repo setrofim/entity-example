@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/google/uuid v1.4.0
-	github.com/veraison/corim v1.1.2-0.20231102162833-1a8e8874d085
+	github.com/veraison/corim v1.1.3-0.20240615102753-72283bb916a0
 )
 
 require (

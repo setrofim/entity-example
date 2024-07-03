@@ -7,6 +7,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/veraison/corim/comid"
+	"github.com/veraison/corim/encoding"
 )
 
 type EntityExtensions struct {
@@ -54,4 +55,10 @@ func main() {
 
 	exts := entity.GetExtensions().(*EntityExtensions)
 	fmt.Printf("also entity email: %s\n", exts.Email)
+
+	out, err := encoding.SerializeStructToJSON(entity)
+	if err != nil {
+		log.Fatalf("could not marshal entity: %s", err.Error())
+	}
+	fmt.Printf("marshaled: %s", string(out))
 }
